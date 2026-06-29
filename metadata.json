@@ -1,0 +1,6 @@
+{
+  "name": "Smart Workplace Collaboration Dashboard",
+  "description": "An advanced, AI-powered workplace collaboration and team productivity dashboard featuring task management, meeting scheduling, team workload analytics, collaborative documents, and Gemini-prioritized task recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

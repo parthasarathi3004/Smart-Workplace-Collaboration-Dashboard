@@ -1,0 +1,197 @@
+{
+  "tasks": [
+    {
+      "id": "task_1",
+      "title": "Revamp client billing dashboard UI",
+      "description": "Migrate the billing metrics view to Tailwind v4 and optimize dynamic layout for mobile responsive viewports.",
+      "assigneeId": "mem_2",
+      "priority": "High",
+      "status": "In Progress",
+      "dueDate": "2026-07-01",
+      "aiAssessment": "Prioritized as High. Direct impact on client invoice onboarding this week. Layout structure needs to align with design specs.",
+      "createdAt": "2026-06-26"
+    },
+    {
+      "id": "task_2",
+      "title": "Optimize PostgreSQL query bottlenecks",
+      "description": "Analyze slow queries on the analytical tables and implement table indices or materialised views.",
+      "assigneeId": "mem_3",
+      "priority": "Critical",
+      "status": "Pending",
+      "dueDate": "2026-06-30",
+      "aiAssessment": "Critical urgency. Database latency is currently touching 2.4s on tenant aggregations. Recommend direct indexation on compound foreign keys.",
+      "createdAt": "2026-06-27"
+    },
+    {
+      "id": "task_3",
+      "title": "Draft system architecture for V2 core",
+      "description": "Document core microservices interfaces, data pipelines, and security layers using visual sequence charts.",
+      "assigneeId": "mem_1",
+      "priority": "High",
+      "status": "Pending",
+      "dueDate": "2026-07-04",
+      "aiAssessment": "Recommended priority: High. Foundations for the Q3 migration rely on this artifact.",
+      "createdAt": "2026-06-25"
+    },
+    {
+      "id": "task_4",
+      "title": "Deploy end-to-end Cypress regression suite",
+      "description": "Implement automated testing for the standard user checkout and auth authentication loops.",
+      "assigneeId": "mem_5",
+      "priority": "Medium",
+      "status": "Completed",
+      "dueDate": "2026-06-28",
+      "aiAssessment": "Completed successfully. Coverage has reached 84%.",
+      "createdAt": "2026-06-24"
+    },
+    {
+      "id": "task_5",
+      "title": "Review corporate billing SLA compliance",
+      "description": "Draft alignment proposal for service-level guarantees on custom billing routes.",
+      "assigneeId": "mem_4",
+      "priority": "Low",
+      "status": "Completed",
+      "dueDate": "2026-06-27",
+      "aiAssessment": "Low priority compliance documentation completed.",
+      "createdAt": "2026-06-23"
+    }
+  ],
+  "meetings": [
+    {
+      "id": "meet_1",
+      "title": "Sprint Review & Demo Sync",
+      "date": "2026-06-29",
+      "time": "11:00",
+      "duration": 60,
+      "type": "Sprint Review",
+      "organizerId": "mem_4",
+      "attendees": [
+        "mem_1",
+        "mem_2",
+        "mem_3",
+        "mem_4",
+        "mem_5"
+      ],
+      "joinLink": "https://meet.google.com/abc-defg-hij",
+      "agenda": "Review completed billing metrics, demonstrate E2E testing logs, and align on bottleneck optimization tasks."
+    },
+    {
+      "id": "meet_2",
+      "title": "Architecture & Design Review",
+      "date": "2026-06-30",
+      "time": "14:30",
+      "duration": 45,
+      "type": "Brainstorming",
+      "organizerId": "mem_1",
+      "attendees": [
+        "mem_1",
+        "mem_3"
+      ],
+      "joinLink": "https://meet.google.com/xyz-pqrs-uvw",
+      "agenda": "Review database bottleneck query plan options and outline structural microservices blueprints."
+    },
+    {
+      "id": "meet_3",
+      "title": "Enterprise Client Alignment Session",
+      "date": "2026-07-02",
+      "time": "16:00",
+      "duration": 30,
+      "type": "Client",
+      "organizerId": "mem_4",
+      "attendees": [
+        "mem_2",
+        "mem_4"
+      ],
+      "joinLink": "https://meet.google.com/mnc-sync-2026",
+      "agenda": "Align on customized enterprise branding layouts and finalize timeline for billing dashboard deployment."
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc_1",
+      "title": "API Design Standards & Guidelines",
+      "category": "Technical",
+      "content": "### MNC Workspace API Design Guidelines\n\nAll services must communicate exclusively via standardized JSON REST interfaces. \n\n#### 1. Path Conventions\n- Plural nouns for resource collections: `/api/v1/tasks`\n- Sub-resources for structured relations: `/api/v1/documents/:id/comments`\n\n#### 2. Authentication\nEach outgoing request must carry the Bearer JWT token inside the authorization header:\n`Authorization: Bearer <token>`\n\n#### 3. Error Schemas\n```json\n{\n  \"error\": {\n    \"code\": \"RESOURCE_NOT_FOUND\",\n    \"message\": \"The requested task was not found.\",\n    \"details\": {}\n  }\n}\n```",
+      "lastEditedBy": "Adhithya Vardhan",
+      "updatedAt": "2026-06-28",
+      "comments": [
+        {
+          "id": "c_1",
+          "authorName": "Vikram Ram",
+          "text": "Looks excellent. I added the Error schema to match our backend express filters.",
+          "timestamp": "2026-06-27 10:45 AM"
+        },
+        {
+          "id": "c_2",
+          "authorName": "Janani Selvam",
+          "text": "Can we include standard pagination params? e.g. ?page=1&limit=20",
+          "timestamp": "2026-06-27 02:15 PM"
+        }
+      ]
+    },
+    {
+      "id": "doc_2",
+      "title": "MNC Corporate Design Tokens",
+      "category": "Design",
+      "content": "### MNC Enterprise Core Design Theme\n\nConsistent typography and structural pairings for all internal workplace portals.\n\n#### Palette Tokens\n- **Canvas Base**: Slate-950 (`#020617`) - Pure enterprise premium slate.\n- **Accents**: \n  - Emerald-500 (`#10b981`) - Success & Completed events\n  - Cyan-400 (`#22d3ee`) - Smart AI and Automation cues\n  - Violet-500 (`#8b5cf6`) - Event Schedules and Interactive controls\n  - Rose-500 (`#f43f5e`) - Critical Priority Alert indicators\n\n#### Visual Hierarchy\nWe enforce a **Desktop-First Precision** layout wrapped in subtle gradient glass borders:\n- Border: `border-white/10` or `border-white/5`\n- Backdrop filter: `backdrop-blur-md bg-slate-900/40`",
+      "lastEditedBy": "Janani Selvam",
+      "updatedAt": "2026-06-27",
+      "comments": [
+        {
+          "id": "c_3",
+          "authorName": "Priya Nair",
+          "text": "This perfectly represents our enterprise visual standard. Ensure Tailwind V4 matches these values.",
+          "timestamp": "2026-06-26 11:30 AM"
+        }
+      ]
+    }
+  ],
+  "members": [
+    {
+      "id": "mem_1",
+      "name": "Adhithya Vardhan",
+      "role": "Lead Architect",
+      "email": "adhithya@mnccorp.com",
+      "avatarColor": "from-emerald-400 to-teal-600",
+      "completedTasksCount": 12,
+      "activeTasksCount": 2
+    },
+    {
+      "id": "mem_2",
+      "name": "Janani Selvam",
+      "role": "Senior Frontend Developer",
+      "email": "janani@mnccorp.com",
+      "avatarColor": "from-cyan-400 to-blue-600",
+      "completedTasksCount": 18,
+      "activeTasksCount": 3
+    },
+    {
+      "id": "mem_3",
+      "name": "Vikram Ram",
+      "role": "Backend Engineering Lead",
+      "email": "vikram@mnccorp.com",
+      "avatarColor": "from-indigo-400 to-purple-600",
+      "completedTasksCount": 14,
+      "activeTasksCount": 4
+    },
+    {
+      "id": "mem_4",
+      "name": "Priya Nair",
+      "role": "Principal Product Manager",
+      "email": "priya@mnccorp.com",
+      "avatarColor": "from-pink-400 to-rose-600",
+      "completedTasksCount": 9,
+      "activeTasksCount": 1
+    },
+    {
+      "id": "mem_5",
+      "name": "Sanjay Kumar",
+      "role": "Senior QA Analyst",
+      "email": "sanjay@mnccorp.com",
+      "avatarColor": "from-amber-400 to-orange-600",
+      "completedTasksCount": 21,
+      "activeTasksCount": 1
+    }
+  ],
+  "aiInsights": "Welcome to the MNC Smart Workplace Hub! All services are active. Our telemetry shows databases are operating at full capacity. Current suggestions: (1) Ensure Vikram Ram gets assistance as they have 4 active tasks. (2) Database slow-query review tomorrow is critical; prepare diagnostic profiles."
+}

@@ -113,10 +113,4 @@ You can run the following commands using `npm`:
 
 * **`npm run clean`**: Removes the compiled production folder `dist`.
 
-project link:
 
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more details.
